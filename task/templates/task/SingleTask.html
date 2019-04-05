@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сдам ЕГЭ</title>
+</head>
+<body>
+<div class="task">
+    <div class="text">
+        <div class="title">
+            <p> Задание №{{ task.id_task }} </p>
+        </div>
+
+        {% if task.text %}
+            <p class="text">
+                {{ task.text }}
+            </p>
+        {% endif %}
+    </div>
+
+    <div class="images">
+        {% for url in images %}
+            <img src="{% static url.uri %}" alt="" id="{{ url.id }}">
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
