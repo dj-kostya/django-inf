@@ -21,7 +21,7 @@
 
     <div class="images">
         {% for url in images %}
-            <img src="{% static url.uri %}" alt="" id="{{ url.id }}">
+            <img src="{{ url.image.url }}" alt="" id="{{ url.id }}">
         {% endfor %}
     </div>
 </div>

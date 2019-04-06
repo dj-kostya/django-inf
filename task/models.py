@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.conf.urls.static import static
 from django.db import models
 from django.utils import timezone
 
@@ -17,14 +18,11 @@ class Tasks(models.Model):
 
 
 class Images(models.Model):
-    uri = models.CharField(max_length=255)
     created_date = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to='img/%Y/%m/%d/', default=' ', null=True)
 
     def publish(self):
         self.save()
-
-    def __str__(self):
-        return self.uri
 
 
 class TaskImage(models.Model):
