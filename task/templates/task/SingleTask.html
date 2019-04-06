@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% autoescape off %} {{ articleTXT }} {% endautoescape %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +15,8 @@
 
         {% if task.text %}
             <p class="text">
-                {{ task.text }}
+                    {{ task.text|safe}}
+
             </p>
         {% endif %}
     </div>
