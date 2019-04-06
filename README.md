@@ -7,6 +7,8 @@
 Установка себе
 
 ```bash
+git clone https://github.com/dj-kostya/django-inf
+cd django-inf
 pip install -r requirements.txt
 ```
 
